@@ -12,11 +12,24 @@ const answerRouter = require('./routes/answer.router');
 const likeRouter = require('./routes/like.router');
 const bookmarkRouter = require('./routes/bookmark.router')
 
-const db = 'mongodb://localhost/AskAndAnswer';
+// const db = 'mongodb://localhost/AskAndAnswer';
 
-port = 1207;
+const db = 'mongodb+srv://haibinh127:binhtu127@cluster0.p2yft.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-mongoose.connect(db);
+try {
+    // Connect to the MongoDB cluster
+    mongoose.connect(
+        db,
+        { useNewUrlParser: true, useUnifiedTopology: true },
+        () => console.log(" Ask-and-answer is connected")
+    );
+} catch (e) {
+    console.log("could not connect");
+}
+
+// port = 1207;
+
+// mongoose.connect(db);
 
 app.use(express.json());
 
@@ -34,6 +47,6 @@ app.use('/api/answer', answerRouter);
 app.use('/api/like', likeRouter);
 app.use('/api/bookmark', bookmarkRouter);
 
-app.listen(port, () => {
-    console.log('App listening on port: ', port);
+app.listen(process.env.PORT || 3000, () => {
+    console.log('App listening');
 });
