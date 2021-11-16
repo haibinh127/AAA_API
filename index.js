@@ -47,6 +47,6 @@ app.use('/api/answer', answerRouter);
 app.use('/api/like', likeRouter);
 app.use('/api/bookmark', bookmarkRouter);
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 1207, () => {
     console.log('App listening');
 });
