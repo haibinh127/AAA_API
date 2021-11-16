@@ -14,7 +14,7 @@ const bookmarkRouter = require('./routes/bookmark.router')
 
 // const db = 'mongodb://localhost/AskAndAnswer';
 
-const db = 'mongodb+srv://haibinh127:binhtu127@cluster0.p2yft.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const db = "mongodb+srv://haibinh127:binhtu127@cluster0.p2yft.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 try {
     // Connect to the MongoDB cluster
@@ -24,7 +24,7 @@ try {
         () => console.log(" Ask-and-answer is connected")
     );
 } catch (e) {
-    console.log("could not connect");
+    console.log("could not connect");git 
 }
 
 // port = 1207;
