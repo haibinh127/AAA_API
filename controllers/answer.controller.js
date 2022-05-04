@@ -20,7 +20,7 @@ const get_answers = async (req, res) => {
         .sort({ 'createdAt': -1 })
         .populate('user_id')
         .exec((err, answer) => {
-            if (err) {
+            if (err) { 
                 res.send(err);
             } else {
                 res.send(answer);
